@@ -1,0 +1,19 @@
+node_modules
+dist
+
+# Keep environment variables out of version control
+.env
+
+/generated/prisma
+
+# SQLite dev database (regenerate with `npm run prisma:migrate && npm run seed`)
+dev.db
+dev.db-journal
+
+# AI tooling config, not part of the project itself
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
+
+.DS_Store
