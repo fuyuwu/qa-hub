@@ -2,6 +2,9 @@
 
 自己在用的前端面試題庫工具：瀏覽 / 篩選題目、洗牌抽卡練習、追蹤複習進度、管理題庫。後端 Express API + 前端 Vue 3 SPA，資料存在 SQLite。
 
+**Live demo**：<https://web-production-88c3f.up.railway.app>
+API：<https://api-production-48d8d.up.railway.app>（`/health` 健康檢查）
+
 ## 功能
 
 - **瀏覽**：依分類、難度、標籤篩選，關鍵字搜尋題目與答案
@@ -79,6 +82,10 @@ npm install
 cp .env.example .env   # VITE_API_BASE_URL 指到後端網址
 npm run dev              # http://localhost:5173
 ```
+
+## 部署
+
+跑在 Railway，同一個專案裡兩個 service：`api`（Express，掛了一個 volume 存 SQLite 檔案）、`web`（Vue build 完用 `serve` 起靜態伺服器）。都接 GitHub `main` branch，push 就自動重新部署。基礎設施定義在 [`.railway/railway.ts`](.railway/railway.ts)（Railway 的 IaC）。
 
 ## License
 
