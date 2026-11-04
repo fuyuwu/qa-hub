@@ -112,6 +112,9 @@ export const api = {
   deleteQuestion(id: string, apiKey: string) {
     return request<void>(`/api/questions/${id}`, { method: "DELETE", apiKey });
   },
+  verifyApiKey(apiKey: string) {
+    return request<void>(`/api/auth/verify`, { method: "POST", apiKey });
+  },
   listCategories() {
     return request<string[]>(`/api/categories`);
   },

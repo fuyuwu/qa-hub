@@ -3,6 +3,7 @@ import express, { NextFunction, Request, Response } from "express";
 import cors from "cors";
 import questionsRouter from "./routes/questions";
 import metaRouter from "./routes/meta";
+import authRouter from "./routes/auth";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+app.use("/api/auth", authRouter);
 app.use("/api/questions", questionsRouter);
 app.use("/api", metaRouter);
 
